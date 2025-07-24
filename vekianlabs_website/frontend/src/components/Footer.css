@@ -1,11 +1,13 @@
 /* frontend/src/components/Footer.css */
+
 .footer-container {
-  background-color: #242424;
+  background-color: var(--color-bg-dark); /* Fondo oscuro */
   padding: 4rem 0 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--color-text-light);
 }
 
 .footer-subscription {
@@ -16,7 +18,11 @@
   text-align: center;
   margin-bottom: 24px;
   padding: 20px;
-  color: #fff;
+  color: var(--color-text-light);
+}
+
+.footer-subscription > p {
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer-subscription-heading {
@@ -29,19 +35,26 @@
   font-size: 20px;
 }
 
+.footer-input {
+  padding: 8px 20px;
+  border-radius: 2px;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  margin-bottom: 16px;
+  border: 1px solid var(--color-text-light);
+}
+
 .footer-links {
   width: 100%;
   max-width: 1000px;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-link-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 20px;
 }
 
 .footer-link-items {
@@ -50,24 +63,31 @@
   align-items: flex-start;
   margin: 16px;
   text-align: left;
+  width: 160px;
   box-sizing: border-box;
 }
 
 .footer-link-items h2 {
   margin-bottom: 16px;
-  color: #fff;
+  color: var(--color-primary-orange); /* Títulos en naranja */
+  font-size: 20px;
 }
 
-.footer-link-items a {
-  color: #fff;
+.footer-link-items a, .footer-link-items p {
+  color: var(--color-light-blue-2); /* Enlaces y texto de contacto en azul claro */
   text-decoration: none;
   margin-bottom: 8px;
   font-size: 14px;
+  transition: 0.3s ease-out;
 }
 
 .footer-link-items a:hover {
-  color: #00bcd4;
-  transition: 0.3s ease-out;
+  color: var(--color-text-light); /* Blanco al pasar el ratón */
+}
+
+.social-icon-link {
+  color: var(--color-text-light);
+  font-size: 24px;
 }
 
 .social-media {
@@ -85,20 +105,24 @@
 }
 
 .footer-logo {
-  color: #fff;
+  color: var(--color-text-light);
   justify-self: start;
-  margin-left: 20px;
+  margin-left: 0;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
   display: flex;
   align-items: center;
   margin-bottom: 16px;
-  font-weight: bold;
+}
+
+.footer-logo-img {
+  height: 40px; /* Ajusta el tamaño del logo en el footer */
+  margin-right: 10px;
 }
 
 .website-rights {
-  color: #fff;
+  color: var(--color-light-blue-1); /* Azul claro para los derechos */
   margin-bottom: 16px;
 }
 
@@ -109,20 +133,18 @@
   width: 240px;
 }
 
-.social-icon-link {
-  color: #fff;
-  font-size: 24px;
-}
-
-.social-icon-link:hover {
-  color: #00bcd4;
-  transition: 0.3s ease-out;
-}
-
-/* Responsive */
+/* Media Queries */
 @media screen and (max-width: 820px) {
   .footer-links {
     padding-top: 2rem;
+  }
+
+  .footer-input {
+    width: 100%;
+  }
+
+  .btn--outline {
+    width: 100%;
   }
 
   .footer-link-wrapper {
@@ -133,3 +155,16 @@
     flex-direction: column;
   }
 }
+
+/* frontend/src/components/Footer.css */
+
+.footer-container {
+  background-color: var(--color-bg-dark); /* Fondo oscuro para el footer */
+  padding: 4rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-light);
+}
+/* ... El resto de los estilos del footer ... */

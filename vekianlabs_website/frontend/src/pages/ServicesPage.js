@@ -1,12 +1,13 @@
 // frontend/src/pages/ServicesPage.js
 import React from 'react';
-import './ServicesPage.css'; // Crearemos este CSS
+import Footer from '../components/Footer'; // Importa el Footer si lo quieres aquí
 
 function ServicesPage() {
   return (
-    <div className='page-container services-page'>
+    <div style={{ padding: '100px 20px', textAlign: 'center' }}>
       <h1>Nuestros Servicios</h1>
-      <p>Aquí mostraremos la lista de servicios.</p>
+      <p>Aquí irá el contenido detallado de nuestros servicios.</p>
+      <Footer /> {/* Si quieres el footer en esta página */}
     </div>
   );
 }

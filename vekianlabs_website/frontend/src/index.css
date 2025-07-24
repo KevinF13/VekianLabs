@@ -1,14 +1,91 @@
 /* frontend/src/index.css */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+/* Fuentes - Mantendremos Poppins y Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Variables de Color basadas en tu paleta y el fondo claro */
+:root {
+  --color-primary-orange: #f28705; /* Naranja principal del logo */
+  --color-light-yellow-1: #f2ea77; /* Amarillo claro 1 */
+  --color-light-yellow-2: #f6f1a6; /* Amarillo claro 2 */
+  --color-light-blue-1: #b0d1d9;   /* Azul claro 1 */
+  --color-light-blue-2: #d2e5ea;   /* Azul claro 2 */
+  --color-light-blue-3: #8ebdc8;   /* Azul claro 3 */
+  --color-text-dark: #333;
+  --color-text-light: #fff;
+  --color-bg-dark: #222; /* Para secciones con fondo oscuro como el footer */
+  --color-bg-light: #f8f8f8; /* Un gris muy claro, casi blanco, para el fondo principal */
+  --color-bg-white: #fff; /* Blanco puro para elementos que resalten */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Reset básico y estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Fuente principal del cuerpo */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg-light); /* Fondo gris claro */
+  color: var(--color-text-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Botones con fondo blanco para el "outline" */
+.btn {
+  padding: 10px 24px;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease-out;
+}
+
+.btn--primary {
+  background-color: var(--color-primary-orange);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-primary-orange);
+}
+
+.btn--outline {
+  background-color: var(--color-bg-white); /* Fondo blanco para el contorno */
+  color: var(--color-text-dark); /* Letra oscura */
+  border: 1px solid var(--color-bg-white);
+}
+
+/* ... Estilos de hover ... */
+.btn--primary:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-primary-orange);
+  border: 1px solid var(--color-primary-orange);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-light-blue-3);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-light-blue-3);
+}
+
+.btn--large {
+  padding: 14px 30px;
+  font-size: 18px;
+}
+
+.btn--medium {
+  padding: 10px 24px;
+  font-size: 16px;
 }
