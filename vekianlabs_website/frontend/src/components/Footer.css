@@ -1,170 +1,221 @@
 /* frontend/src/components/Footer.css */
 
 .footer-container {
-  background-color: var(--color-bg-dark); /* Fondo oscuro */
-  padding: 4rem 0 2rem 0;
+  /* Fondo degradado de oscuro a naranja */
+  background: linear-gradient(to bottom, var(--color-bg-dark), var(--color-primary-orange));
+  padding: 60px 20px 20px 20px; /* Ajusta el padding superior e inferior */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   color: var(--color-text-light);
+  position: relative; /* Para el botón de scroll to top */
 }
 
-.footer-subscription {
+.footer-main-content {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 24px;
-  padding: 20px;
-  color: var(--color-text-light);
-}
-
-.footer-subscription > p {
-  font-family: 'Poppins', sans-serif;
-}
-
-.footer-subscription-heading {
-  margin-bottom: 24px;
-  font-size: 24px;
-}
-
-.footer-subscription-text {
-  margin-bottom: 24px;
-  font-size: 20px;
-}
-
-.footer-input {
-  padding: 8px 20px;
-  border-radius: 2px;
-  margin-right: 10px;
-  outline: none;
-  border: none;
-  font-size: 18px;
-  margin-bottom: 16px;
-  border: 1px solid var(--color-text-light);
-}
-
-.footer-links {
+  justify-content: space-between;
   width: 100%;
-  max-width: 1000px;
-  display: flex;
-  justify-content: center;
+  max-width: 1300px;
+  margin-bottom: 40px; /* Espacio antes de la barra inferior */
+  flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */
 }
 
-.footer-link-wrapper {
-  display: flex;
-}
-
-.footer-link-items {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 16px;
-  text-align: left;
-  width: 160px;
+/* Columna izquierda: Título y botón de contacto */
+.footer-left-column {
+  flex: 0 0 35%; /* Ocupa un 35% del ancho en desktop */
+  max-width: 35%;
+  padding-right: 40px;
   box-sizing: border-box;
+  text-align: left;
 }
 
-.footer-link-items h2 {
-  margin-bottom: 16px;
-  color: var(--color-primary-orange); /* Títulos en naranja */
-  font-size: 20px;
+.footer-cta-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem); /* Título responsivo */
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin-bottom: 30px;
+  line-height: 1.2;
 }
 
-.footer-link-items a, .footer-link-items p {
-  color: var(--color-light-blue-2); /* Enlaces y texto de contacto en azul claro */
-  text-decoration: none;
+.footer-connect-btn {
+  margin-bottom: 30px;
+  display: inline-block; /* Para que el botón no ocupe todo el ancho */
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social-icons a {
+  color: var(--color-text-light); /* Iconos blancos */
+  font-size: 1.5rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-social-icons a:hover {
+  color: var(--color-primary-orange); /* Naranja al pasar el ratón */
+}
+
+/* Columnas de enlaces */
+.footer-right-columns {
+  flex: 0 0 65%; /* Ocupa el 65% restante */
+  max-width: 65%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permite que las columnas de enlaces se envuelvan */
+}
+
+.footer-link-group {
+  flex: 0 0 33.33%; /* Tres columnas de enlaces en desktop */
+  max-width: 33.33%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Espacio entre grupos en móvil */
+}
+
+.footer-link-group h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary-orange); /* Títulos de columna en naranja */
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.footer-link-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link-group ul li {
   margin-bottom: 8px;
-  font-size: 14px;
-  transition: 0.3s ease-out;
 }
 
-.footer-link-items a:hover {
+.footer-link-group ul li a {
+  color: rgba(255, 255, 255, 0.7); /* Enlaces ligeramente transparentes */
+  font-size: 0.95rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-link-group ul li a:hover {
   color: var(--color-text-light); /* Blanco al pasar el ratón */
 }
 
-.social-icon-link {
-  color: var(--color-text-light);
-  font-size: 24px;
-}
-
-.social-media {
-  max-width: 1000px;
+/* Sección inferior de copyright y enlaces legales */
+.footer-bottom-bar {
   width: 100%;
-}
-
-.social-media-wrap {
+  max-width: 1300px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria sutil */
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: 1000px;
-  margin: 40px auto 0 auto;
+  flex-wrap: wrap; /* Permite que se envuelva en móvil */
 }
 
-.footer-logo {
-  color: var(--color-text-light);
-  justify-self: start;
-  margin-left: 0;
-  cursor: pointer;
+.footer-copyright {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5); /* Texto de copyright más sutil */
+  margin-bottom: 10px; /* Espacio en móvil */
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 10px; /* Espacio en móvil */
+}
+
+.footer-legal-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
   text-decoration: none;
-  font-size: 2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-legal-links a:hover {
+  color: var(--color-text-light);
+}
+
+/* Botón de Scroll to Top */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--color-primary-orange); /* Naranja */
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
   display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.footer-logo-img {
-  height: 40px; /* Ajusta el tamaño del logo en el footer */
-  margin-right: 10px;
-}
-
-.website-rights {
-  color: var(--color-light-blue-1); /* Azul claro para los derechos */
-  margin-bottom: 16px;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 240px;
-}
-
-/* Media Queries */
-@media screen and (max-width: 820px) {
-  .footer-links {
-    padding-top: 2rem;
-  }
-
-  .footer-input {
-    width: 100%;
-  }
-
-  .btn--outline {
-    width: 100%;
-  }
-
-  .footer-link-wrapper {
-    flex-direction: column;
-  }
-
-  .social-media-wrap {
-    flex-direction: column;
-  }
-}
-
-/* frontend/src/components/Footer.css */
-
-.footer-container {
-  background-color: var(--color-bg-dark); /* Fondo oscuro para el footer */
-  padding: 4rem 0 2rem 0;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--color-text-light);
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 1000; /* Asegura que esté por encima de todo */
 }
-/* ... El resto de los estilos del footer ... */
+
+.scroll-to-top-btn:hover {
+  background-color: var(--color-light-blue-3); /* Azul al pasar el ratón */
+  transform: translateY(-5px);
+}
+
+/* Media Queries para responsividad */
+@media screen and (max-width: 1024px) {
+  .footer-left-column {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .footer-right-columns {
+    flex: 0 0 100%;
+    max-width: 100%;
+    justify-content: space-around; /* Centra las columnas de enlaces */
+  }
+  .footer-link-group {
+    flex: 0 0 48%; /* Dos columnas en tablets */
+    max-width: 48%;
+    padding: 0 10px;
+    text-align: center;
+  }
+  .footer-social-icons {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    padding: 40px 15px 15px 15px;
+  }
+  .footer-link-group {
+    flex: 0 0 100%; /* Una columna en móviles */
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-copyright {
+    margin-bottom: 15px;
+  }
+  .footer-legal-links {
+    justify-content: center;
+  }
+  .scroll-to-top-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+    bottom: 20px;
+    right: 20px;
+  }
+}

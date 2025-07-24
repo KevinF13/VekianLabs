@@ -1,16 +1,17 @@
 // frontend/src/pages/HomePage.js
 import React from 'react';
-import '../App.css';
+import '../App.css'; // Asegúrate de que este archivo exista y esté en la raíz de src
 import HeroSection from '../components/HeroSection';
-import LogoCarousel from '../components/LogoCarousel'; // Importa el nuevo componente
+import LogoCarousel from '../components/LogoCarousel';
+import ServicesSection from '../components/ServicesSection'; // Importa la nueva sección de servicios
 import Footer from '../components/Footer';
 
 function HomePage() {
   return (
     <>
       <HeroSection />
-      <LogoCarousel /> {/* Añade el carrusel aquí */}
-      {/* Aquí podrías añadir otras secciones de la página de inicio */}
+      <LogoCarousel />
+      <ServicesSection /> {/* Aquí se inserta la sección de Nuestros Servicios */}
       <Footer />
     </>
   );

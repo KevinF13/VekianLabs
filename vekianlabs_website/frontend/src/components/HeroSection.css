@@ -14,35 +14,54 @@
   overflow: hidden; /* Asegura que las imágenes no se desborden */
 }
 
-.hero-container > h1 {
-  color: var(--color-text-light);
-  font-size: clamp(40px, 6vw, 72px); /* Tamaño responsive del título */
-  line-height: 1.1;
-  font-weight: 700;
-  max-width: 80%; /* Para que el texto no sea demasiado ancho en pantallas grandes */
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
-  font-family: 'Montserrat', sans-serif;
-  transition: opacity 0.5s ease-in-out; /* Transición para el texto */
+/* Contenedor del contenido para la animación */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px; /* Limita el ancho del contenido */
+  padding: 0 20px;
+  box-sizing: border-box; /* Incluye padding en el ancho */
+  opacity: 0; /* Oculto por defecto para la animación */
+  transform: translateY(20px); /* Ligeramente desplazado para el efecto de entrada */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.hero-container > p {
-  margin-top: 0;
+.hero-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-content.fade-out {
+  opacity: 0;
+  transform: translateY(-20px); /* Desplazamiento al salir */
+}
+
+
+.hero-container h1 {
   color: var(--color-text-light);
-  font-size: clamp(18px, 2.5vw, 24px); /* Tamaño responsive del subtítulo */
-  font-weight: 400;
-  max-width: 70%;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(48px, 6vw, 72px); /* Ajustado para mayor impacto */
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada */
+}
+
+.hero-container p {
+  color: var(--color-text-light);
   font-family: 'Poppins', sans-serif;
-  transition: opacity 0.5s ease-in-out; /* Transición para el texto */
+  font-size: clamp(20px, 2.5vw, 28px); /* Ajustado para mayor legibilidad */
+  font-weight: 400;
+  max-width: 80%;
+  margin-bottom: 40px; /* Más espacio antes de los botones */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-btns {
-  margin-top: 40px;
   display: flex;
-  gap: 20px; /* Espacio entre botones */
-  transition: opacity 0.5s ease-in-out; /* Transición para los botones */
+  gap: 20px;
 }
 
 /* Flechas de navegación del carrusel */
@@ -50,11 +69,11 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--color-text-light); /* Flechas blancas */
-  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.7); /* Flechas semitransparentes */
+  font-size: 3.5rem; /* Flechas más grandes */
   cursor: pointer;
   z-index: 10; /* Asegura que estén por encima de la imagen y el texto */
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .hero-arrow.left {
@@ -67,6 +86,7 @@
 
 .hero-arrow:hover {
   color: var(--color-primary-orange); /* Naranja al pasar el ratón */
+  transform: translateY(-50%) scale(1.1); /* Efecto de escala al pasar el ratón */
 }
 
 /* Indicadores de diapositivas (puntos en la parte inferior) */
@@ -79,9 +99,9 @@
 }
 
 .indicator {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(255, 255, 255, 0.5); /* Puntos semitransparentes */
+  width: 14px; /* Puntos un poco más grandes */
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.4); /* Puntos más sutiles */
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -94,19 +114,36 @@
 
 /* Media Queries para responsividad */
 @media screen and (max-width: 768px) {
-  .hero-container > h1 {
-    font-size: 50px;
+  .hero-container h1 {
+    font-size: 40px;
   }
-  .hero-container > p {
-    font-size: 20px;
+  .hero-container p {
+    font-size: 18px;
   }
   .hero-btns {
     flex-direction: column;
     align-items: center;
+    gap: 15px;
   }
   .hero-arrow {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     left: 15px;
     right: 15px;
+  }
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero-container h1 {
+    font-size: 32px;
+  }
+  .hero-container p {
+    font-size: 16px;
+  }
+  .hero-arrow {
+    font-size: 2.2rem;
   }
 }
