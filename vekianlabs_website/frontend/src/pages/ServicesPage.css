@@ -1,0 +1,13 @@
+/* frontend/src/pages/ServicesPage.css */
+.page-container {
+  min-height: 80vh; /* Para que el footer no suba */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.services-page h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
