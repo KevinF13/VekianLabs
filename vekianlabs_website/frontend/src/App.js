@@ -20,6 +20,12 @@ import MediosPage from './pages/MediosPage';
 import TecnologiaPage from './pages/TecnologiaPage';
 import PetroleoGasPage from './pages/PetroleoGasPage';
 import RetailPage from './pages/RetailPage';
+import CloudSolutionsPage from './pages/CloudSolutionsPage';
+import AnaliticaDatosPage from './pages/AnaliticaDatosPage';
+import DisenoPage from './pages/DisenoPage';
+import IngenieriaPage from './pages/IngenieriaPage';
+import DesarrolloFrontendPage from './pages/DesarrolloFrontendPage';
+import EstrategiaInnovacionPage from './pages/EstrategiaInnovacionPage';
 
 function App() {
   return (
@@ -45,6 +51,12 @@ function App() {
           <Route path='/industrias/tecnologia' element={<TecnologiaPage/>} />
           <Route path='/industrias/petroleo' element={<PetroleoGasPage/>} />
           <Route path='/industrias/retail' element={<RetailPage/>} />
+          <Route path='/servicios/cloud' element={<CloudSolutionsPage/>} />
+          <Route path='/servicios/data' element={<AnaliticaDatosPage/>} />
+          <Route path='/servicios/design' element={<DisenoPage/>} />
+          <Route path='/servicios/ingenieria' element={<IngenieriaPage/>} />
+          <Route path='/servicios/frontend' element={<DesarrolloFrontendPage/>} />
+          <Route path='/servicios/innovacion' element={<EstrategiaInnovacionPage/>} />
         </Routes>
       </Router>
     </>
