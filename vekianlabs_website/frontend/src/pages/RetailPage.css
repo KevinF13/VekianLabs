@@ -1,0 +1,142 @@
+/* frontend/src/pages/RetailPage.css */
+
+.retail-page {
+  background-color: var(--color-bg-dark); /* Fondo oscuro para toda la página */
+  color: var(--color-text-light); /* Texto claro */
+  min-height: 100vh;
+}
+
+.retail-hero-section {
+  position: relative;
+  height: 60vh; /* Altura del hero, ajusta si es necesario */
+  background-image: url('https://images.unsplash.com/photo-1556740738-b6a63e620c7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Imagen de fondo relacionada con retail  */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+.retail-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Capa oscura para legibilidad */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.retail-hero-overlay h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.retail-hero-overlay p {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  max-width: 800px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.retail-content-section {
+  padding: 80px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.retail-content-section .content-container {
+  background-color: var(--color-bg-dark); /* Fondo del contenedor de contenido */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.retail-content-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--color-primary-orange); /* Títulos en naranja */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.retail-content-section h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--color-light-blue-1); /* Subtítulos en azul claro */
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.retail-content-section p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.8); /* Texto de párrafo ligeramente transparente */
+}
+
+.retail-content-section ul {
+  list-style: none; /* Sin viñetas por defecto */
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.retail-content-section ul li {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  padding-left: 25px; /* Espacio para la viñeta personalizada */
+}
+
+.retail-content-section ul li::before {
+  content: '\2022'; /* Código Unicode para un punto */
+  color: var(--color-primary-orange); /* Color de la viñeta */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Media Queries para responsividad */
+@media screen and (max-width: 768px) {
+  .retail-hero-section {
+    height: 50vh;
+  }
+  .retail-hero-overlay h1 {
+    font-size: 2rem;
+  }
+  .retail-hero-overlay p {
+    font-size: 0.9rem;
+  }
+  .retail-content-section {
+    padding: 40px 15px;
+  }
+  .retail-content-section .content-container {
+    padding: 25px;
+  }
+  .retail-content-section h2 {
+    font-size: 1.8rem;
+  }
+  .retail-content-section h3 {
+    font-size: 1.3rem;
+  }
+  .retail-content-section p,
+  .retail-content-section ul li {
+    font-size: 0.95rem;
+  }
+}

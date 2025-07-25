@@ -117,15 +117,21 @@
   text-align: left;
   z-index: 10;
   opacity: 0;
-  pointer-events: none;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transición más suave */
+  pointer-events: none; /* No interactuable cuando está oculto */
+  transform: translateY(-40px); /* Aumentamos el desplazamiento inicial para un efecto más notorio */
+  visibility: hidden; /* Oculto por defecto */
+  /* Transición mejorada: 0.7s para opacidad y transform, 0s para visibility con un delay al ocultar */
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), /* Curva de animación personalizada para un efecto más suave */
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              visibility 0s 0.7s; /* La visibilidad cambia después de que la opacidad y transformación terminan */
 }
 
 .nav-item:hover > .nav-submenu {
   opacity: 1;
-  pointer-events: all;
+  pointer-events: all; /* Interactuable al pasar el ratón */
   transform: translateY(0);
+  visibility: visible; /* Visible al pasar el ratón */
+  transition-delay: 0s; /* Visible inmediatamente al pasar el ratón */
 }
 
 .nav-submenu-column {
@@ -216,6 +222,10 @@
     box-shadow: none;
     padding: 0;
     border-top: none;
+    opacity: 1; /* Siempre visible en móvil cuando el menú está abierto */
+    transform: translateY(0); /* Sin transformación en móvil */
+    visibility: visible; /* Siempre visible en móvil cuando el menú está abierto */
+    transition: none; /* Sin transición en móvil para evitar conflictos */
   }
   
   .nav-submenu-column {
